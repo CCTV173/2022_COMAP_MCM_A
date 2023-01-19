@@ -1,0 +1,21 @@
+%% b_fm_tt-sp
+clear;
+clc;
+c1=0.14;
+c2=[3.75 3.195];
+c3=[83.9 63.9];
+dt=0.1;
+load vt_b_sp_m.mat;
+load vt_b_tt_m.mat;
+load vt_b_sp_fm.mat;
+load vt_b_tt_fm.mat;
+vt_b_sp_m=A;
+vt_b_tt_m=MCM_t2_belgium_TT_M;
+vt_b_sp_fm=MCM_t2_belgium_SP_FM;
+vt_b_tt_fm=MCM_t2_belgium_TT_FM;
+[p1,s1]=pscalculation_pic(vt_b_sp_m,c1,c2(1),c3(2),dt);
+hold on;
+[p2,s2]=pscalculation_pic(vt_b_tt_m,c1,c2(1),c3(2),dt);
+% [p3,s3]=pscalculation_pic(vt_b_sp_fm,c1,c2(2),c3(2),dt);
+% hold on;
+% [p4,s4]=pscalculation_pic(vt_b_tt_fm,c1,c2(2),c3(2),dt);
